@@ -18,17 +18,18 @@
 2. Создайте и активируйте окружение
 
 3. Установите зависимости:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 4. Инициализируйте DVC и подключите локальный remote:
-dvc init
-dvc remote add -d myremote ./data/dvc_storage
+`dvc init`
+`dvc remote add -d myremote ./data/dvc_storage`
+`dvc pull`
 
 5. Воспроизведите пайплайн:
-dvc repro
+`dvc repro`
 
 6. Запустите MLflow UI для просмотра экспериментов:
-mlflow ui --port 5000
+`mlflow ui --port 5000`
 
 ## Команды для воспроизведения экспериментов
 - `dvc repro` — воспроизвести весь пайплайн (подготовка данных + обучение модели)
