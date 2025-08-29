@@ -1,0 +1,22 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+
+# DVC
+.dvc/tmp/
+.dvc/cache/
+.dvc/config.local
+
+#catboost
+catboost_info/
+
+# данные/модели (DVC будет их отслеживать, не ставим в Git)
+data/
+models/
+
+# macOS / Windows мусор
+.DS_Store
+Thumbs.db
+.idea/

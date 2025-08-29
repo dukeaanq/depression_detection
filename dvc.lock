@@ -1,0 +1,50 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python data_loader.py
+    deps:
+    - path: data/raw/final_dataset.xlsx
+      hash: md5
+      md5: 58e3bffeb556ddd26aff09f290409863
+      size: 985604
+    - path: data_loader.py
+      hash: md5
+      md5: 6fe9e514e5d3bb7d16676feace1cc9a8
+      size: 3468
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 5b9a9a9940765dc92f805a0c69e54f7b
+      size: 312965
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 18e266a803ebaa5c7a3d1fedcdf343d7
+      size: 938377
+    - path: data/processed/valid.csv
+      hash: md5
+      md5: fff1c121924f81dccc9861b16770b26b
+      size: 312884
+  train:
+    cmd: python train_model.py
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 5b9a9a9940765dc92f805a0c69e54f7b
+      size: 312965
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 18e266a803ebaa5c7a3d1fedcdf343d7
+      size: 938377
+    - path: data/processed/valid.csv
+      hash: md5
+      md5: fff1c121924f81dccc9861b16770b26b
+      size: 312884
+    - path: train_model.py
+      hash: md5
+      md5: 8ff83e36ee6480757e856b69cf914254
+      size: 3333
+    outs:
+    - path: models/catboost_model.pkl
+      hash: md5
+      md5: edc92c7c01c2a9cf1c38eef1e01f1ffc
+      size: 578699
