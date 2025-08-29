@@ -12,9 +12,13 @@ mlruns/
 #catboost
 catboost_info/
 
-# данные/модели (DVC будет их отслеживать, не ставим в Git)
-data/
-models/
+# данные (файлы внутри data будут игнорироваться, кроме .dvc-метаданных)
+data/**/*
+!data/**/*.dvc
+
+# модели
+models/**/*
+!models/**/*.dvc
 
 # macOS / Windows мусор
 .DS_Store
