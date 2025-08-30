@@ -79,4 +79,4 @@ if __name__ == "__main__":
     final_df = vectorize_text(df)
 
     X_train, X_valid, X_test, y_train, y_valid, y_test = split_data(final_df)
-    save_splits(X_train, X_valid, X_test, y_train, y_valid, y_test)
+    save_splits(X_train, pX_valid, X_test, y_train, y_valid, y_test)
